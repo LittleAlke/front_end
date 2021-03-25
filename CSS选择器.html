@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* ul > li:nth-child(1){ */
+        ul > li:last-child{
+            color: aqua;
+        }
+        div ~ span{
+            color: rgb(20, 40, 221);
+        }
+        div.box span{
+            color: red;
+            font-size: 30px;
+        }
+        [title=卢本伟菜鸡]{
+            color: green;
+        }
+        ul > li:not(:nth-child(3)){
+            color: blue;
+        }
+    </style>
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+</head>
+
+<body>
+    <h1>卢本伟语录</h1>
+    <ul>
+        <span>666</span>
+        <li>张三</li>
+        <li>李四</li>
+        <li>王五</li>
+        <li>赵六</li>
+        <li>田七</li>
+        <li>奥特曼</li>
+        <li>123</li>
+    </ul>
+    <!-- <div class="box">
+        爷爷
+        <p>
+            爸爸
+            <span>我</span>
+        </p>
+        <span>大伯</span>
+        <div>大姑</div>
+        <h1></h1>
+        <span>二伯</span>
+        <span>三伯</span>
+        <span>四伯</span>
+        <div>
+            二姑
+            <span>二姑的儿子</span>
+        </div>
+    </div> -->
+    <p title="卢本伟牛逼">我卢本伟没有开挂！</p>
+    <p title="卢本伟菜鸡">我卢本伟没有开挂！</p>
+
+    
+</body>
+
+</html>
