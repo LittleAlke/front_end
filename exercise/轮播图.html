@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮播图</title>
+    <link rel="stylesheet" href="../css/reset.css">
+
+    <style>
+        .img_list {
+            width: 591px;
+            height: 300px;
+            margin: 50px auto;
+
+            /* 开启定位，使ul中的pointer可以相对于ul定位 */
+            position: relative;
+        }
+
+        .img_list li {
+            position: absolute;
+        }
+
+        /* 通过修改元素的层级来显示指定的图片 */
+        .img_list li:nth-child(4) {
+            z-index: 1;
+        }
+
+        .pointer {
+            position: absolute;
+            z-index: 999;
+            bottom: 20px;
+            left: 40px;
+
+        }
+
+        .pointer a{
+            width: 10px;
+            height: 10px;
+            background-color: rgba(225, 255, 255, .5);
+            float: left;
+            margin: 0 5px;
+            border-radius: 50%;
+            /* 背景颜色默认会延申到边框 */
+            /* 将背景颜色值设置到内容区，边框和内边距不在有背景颜色 */
+            background-clip: content-box;
+            border: 2px solid transparent;
+        }
+
+        .pointer a:hover{
+            background-color: aliceblue;
+            border: 2px solid rgba(225, 255, 255, .5);
+        }
+
+
+    </style>
+
+
+</head>
+
+<body>
+    <ul class="img_list">
+        <li><a href="javascript:;"><img src="../image/lol_1.jpg"></a></li>
+        <li><a href="javascript:;"><img src="../image/lol_2.jpg"></a></li>
+        <li><a href="javascript:;"><img src="../image/lol_3.jpg"></a></li>
+        <li><a href="javascript:;"><img src="../image/lol_4.jpg"></a></li>
+        <li><a href="javascript:;"><img src="../image/lol_5.jpg"></a></li>
+        <li><a href="javascript:;"><img src="../image/lol_6.jpg"></a></li>
+        <div class="pointer">
+            <a href="javascrippt:;"></a>
+            <a href="javascrippt:;"></a>
+            <a href="javascrippt:;"></a>
+            <a href="javascrippt:;"></a>
+            <a href="javascrippt:;"></a>
+            <a href="javascrippt:;"></a>
+        </div>
+    </ul>
+
+</body>
+
+</html>

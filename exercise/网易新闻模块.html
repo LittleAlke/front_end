@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        /* 所有链接的下划线取消 */
+        a{
+            text-decoration: none;
+        }
+        /* 总体区域 */
+        .news{
+            background-color: rgb(255, 255, 255);
+            width: 300px;
+            height: 324px;
+            margin: 50px 50px;
+            /* 设置上边框 */
+            border-top: 1px;
+            border-top-color: #ddd;
+            border-style: solid;
+            
+            /* outline: rgba(70, 68, 73, 0.5) 10px solid; */
+            
+            box-shadow: 30px 20px 50px rgb(0, 0, 0,.7);
+
+
+        }
+
+    /* 标题区域 */
+        .news_title{
+            height: 41px;
+        }
+
+        /* 标题文字 */
+        .news_title h2{
+            height: 25px;
+            padding: 6px 0px 10px 0px;
+            /* 为了让边框长度和文字一致，设置为行内块 */
+            display: inline-block;
+            /* 设置上边框 */
+            border-top: 1px rgb(165, 13, 13) solid;
+            /* 上移盖住边框 */
+            margin-top: -1px;
+        }
+
+        /* 标题超链接字体 */
+        .news_title a{
+            color: #40406b;
+            font-weight: bold;
+        }
+
+    /* 图片区域 */
+        /* 设置图片区域高度 */
+        .news_img{
+            height: 150px;
+        }
+
+        /* 设置图片文字大小 */
+        .news_img h3{
+            /* 向上移动文字 */
+            margin-top: -25px;
+            color: #fff;
+            font-weight: bold;
+            padding-left: 15px;
+        }
+
+    /* 列表区域 */
+        .news_list{
+            margin-top: 16px;
+            padding-left: 14px;
+        }
+
+        .news_list li{
+            /* 设置下边距 */
+            margin-top: 14px;
+        }
+
+        /* 列表字体 */
+        .news_list li a{
+            font-size: 14px;
+            color: #666;
+        }
+
+        .news_list li a:hover,a:hover{
+            color: red;
+        }
+        
+
+
+
+    </style>
+    <title>网易新闻</title>
+</head>
+<body>
+    <div class="news">
+        <!-- 标题区域 -->
+        <div class="news_title">
+            <h2>
+                <a href="#">军事</a>
+                <i>·</i>
+                <a href="#">航空</a>
+            </h2>
+        </div>
+
+        <!-- 图片区域 -->
+        <div class="news_img">
+            <a href="#">
+                <img src="../image/战斗机.jpg" alt="">
+                <div>
+                    <h3>最近，美国空军有点反常</h3>
+                </div>
+            </a>
+        </div>
+
+        <!-- 内容列表区域 -->
+        <ul class="news_list">
+            <li>
+                <a href="#">中国万吨级驱逐舰赴日本海训练</a>
+            </li>
+            <li>
+                <a href="#">射程32公里！美军"阿帕奇"可超地平线打击</a>
+            </li>
+            <li>
+                <a href="#">NASA和SpaceX同意共享数据以避免卫星碰撞</a>
+            </li>
+            <li>
+                <a href="#">直径2.5米级重型氢氧发动机喷管研制成功</a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>顶部导航栏</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../font/css/all.css">
+    <style>
+        /* 防止高度塌陷 */
+        .clearfix::before,
+        .clearfix::after
+        {
+            content: '';
+            display: table;
+            clear: both;
+        }
+
+        body {
+            font-size: 14px;
+        }
+
+        .top_bar_wrapper {
+            /* 高度写死防止因为下拉框的实现而动态撑大 */
+            height: 30px;
+            width: 100%;
+            line-height: 30px;
+            background-color: #E3E4E5;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .top_bar {
+            width: 1190px;
+            margin: 0 auto;
+            /* 开启相对定位，使得下拉框可以根据topbar的位置调整自己的位置 */
+            position: relative;
+        }
+
+        /* 将头部的所有字体设置 */
+        .top_bar a,
+        .top_bar span,
+        .top_bar i{
+            color: #999;
+            text-decoration: none;
+        }
+
+        /* 鼠标移入变高亮和某些标签一直是高亮 */
+        .top_bar a:hover,
+        .top_bar a.highlight{
+            color: #f10215;
+        }   
+
+        .location{
+            float: left;
+        }
+
+        .location .fas{
+            font-size: 14px;
+            color: #f10215;
+        }
+
+        .location .city_list{
+            /* 选中时才显示 */
+            display: none;
+            width: 320px;
+            height: 436px;
+            background-color: white;
+            border: 1px solid rgb(204, 204, 204);
+            /* 相对于top_bar的位置绝对定位 */
+            position: absolute;
+            box-shadow: 0 2px 2px rgba(0, 0, 0, .6);
+            top: 31px;
+            /* 悬浮下拉框的层级一般都比较高 */
+            z-index: 999;
+        }
+
+        /* 当鼠标移入location中时，悬浮下拉框显示出来 */
+        .location:hover .city_list{
+            display: block;
+        }
+
+        .current_city{
+            padding: 0 10px;
+            /* 设置相对定位以脱离文档流 */
+            position: relative;
+            /* 设置层级比悬浮框高一级，盖住悬浮框的上边框 */
+            z-index: 1000;
+            /* 设置边框并透明，鼠标移入时才显示 */
+            border: 1px solid transparent;
+            border-bottom: none;
+        }
+
+        /* 当鼠标移入时，current_city的样式 */
+        .location:hover .current_city{
+            background-color: white;
+            border: 1px solid rgb(204, 204, 204);
+            border-bottom: none;
+            /* 多出这1像素内边距是为了盖住悬浮框的上边框 */
+            padding-bottom: 1px;
+        }
+
+        .shortcut{
+            float: right;
+        }
+
+        .shortcut .line{
+            width: 1px;
+            height: 10px;
+            background-color: #999;
+            margin: 12px 12px 0;
+        }
+        .shortcut li{
+            float: left;
+        }
+
+
+
+    </style>
+</head>
+
+<body>
+    <div class="top_bar_wrapper clearfix">
+        <div class="top_bar">
+            <div class="location">
+                <div class="current_city">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <a href="javascript:;">北京</a>
+                </div>
+                <div class="city_list">
+                </div>
+            </div>
+            <ul class="shortcut">
+                <li>
+                    <a href="javascript:;">你好，请登录</a>
+                    <a href="javascript:;" class="highlight">免费注册</a>
+                </li>
+                <!-- 分割线 -->
+                <li class="line"></li>
+                <li><a href="javascript:;">我的订单</a></li>
+
+                <li class="line"></li>
+                <li>
+                    <a href="javascript:;">我的京东</a>
+                    <i class="fas fa-angle-down"></i>
+                </li>
+
+                <li class="line"></li>
+                <li><a href="javascript:;">京东会员</a></li>
+
+                <li class="line"></li>
+                <li>
+                    <a href="javascript:;" class="highlight">企业采购</a>
+                    <i class="fas fa-angle-down"></i>
+                </li>
+
+                <li class="line"></li>
+                <li>
+                    <span>客户服务</span>
+                    <i class="fas fa-angle-down"></i>
+                </li>
+
+                <li class="line"></li>
+                <li>
+                    <span>网站导航</span>
+                    <i class="fas fa-angle-down"></i>
+                </li>
+
+                <li class="line"></li>
+                <li><span>手机京东</span></li>
+
+
+
+
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
