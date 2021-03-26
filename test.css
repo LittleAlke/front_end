@@ -1,0 +1,28 @@
+body {
+  width: 100px;
+  height: 100px;
+  /* 多行注释，会被同步到css中 */
+}
+body div {
+  color: rebeccapurple;
+}
+.box5 {
+  width: 300px;
+  background-image: url("image/lol_2.jpg");
+  color: #bfa;
+  background-color: #bfa;
+}
+.box5:hover {
+  color: antiquewhite;
+}
+.box6 {
+  width: 300px;
+}
+.p1,
+.p2 {
+  width: 100px;
+  height: 200px;
+}
+.p2 {
+  color: burlywood;
+}

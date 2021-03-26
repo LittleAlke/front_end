@@ -1,0 +1,42 @@
+body{
+    //单行注释 不会同步到css文件中
+    width: 100px;
+    height: 100px;
+    /* 多行注释，会被同步到css中 */
+    div{
+        color: rebeccapurple;
+    }
+}
+
+
+@b:#bfa;
+@c:0.3s;
+@d:box6;
+@e:"./image";
+
+.box5{
+    width: @a;
+    color: @b;
+    background-image: url("@{e}/lol_2.jpg");
+    color: #bfa;
+    background-color: $color;
+
+    &:hover{
+        color: antiquewhite;
+    }
+}
+
+.@{d}{
+    width: @a;
+}
+
+@a:200px;
+@a:300px;
+
+.p1{
+    width: 100px;
+    height: 200px;
+}
+.p2:extend(.p1){
+    color: burlywood;
+}
