@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动画</title>
+    <style>
+        .box1{
+            /* width: 120px;
+
+            height: 177px; */
+            width: 320px;
+            height: 868px;
+            margin: 0 auto;
+            /* background-image: url(./image/Snow_People.jpg); */
+            background-image: url(./image/礼盒.jpg);
+            animation: run 1s steps(4) 2;
+            
+        }
+
+        @keyframes run {
+            from{
+                background-position: 0 0;
+            }
+
+            to{
+                background-position: -1280px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    
+</body>
+</html>
