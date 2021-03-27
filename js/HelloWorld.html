@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 结构与行为耦合，不推荐 -->
+    <!-- <button onclick="alert('讨厌！')">Alke</button>
+    <a href="javascript:alert('hello')">asd</a> -->
+    <script>
+		var a = 123;
+		function fun(){
+			alert(a);
+			var a = 456;
+		}
+		fun();
+		alert(a);
+
+		
+    </script>
+</body>
+</html>
