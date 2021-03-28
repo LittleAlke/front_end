@@ -7,19 +7,16 @@
     <title>Document</title>
 </head>
 <body>
-    <!-- 结构与行为耦合，不推荐 -->
-    <!-- <button onclick="alert('讨厌！')">Alke</button>
-    <a href="javascript:alert('hello')">asd</a> -->
+    <button id="btn">我是一个按钮</button>
     <script>
-		  var a = 123;
-		  function fun(){
-			  alert(a);
-			  var a = 456;
-		  }
-		  fun();
-		  alert(a);
-
-		
+        var btn = document.getElementById("btn");
+        btn.onclick = function(){
+            alert("666");
+        }
+        btn.onmousemove = function(){
+            alert("222");
+        }
+        
     </script>
 </body>
 </html>

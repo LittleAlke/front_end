@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        #outer {
+            width: 591px;
+            margin: 50px auto;
+            padding: 10px;
+            background-color: aqua;
+            text-align: center;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var pre = document.getElementById("pre");
+            var next = document.getElementById("next");
+
+            var img = document.getElementsByTagName("img")[0];
+            var imgs = ["../image/lol_1.jpg", "../image/lol_2.jpg", "../image/lol_3.jpg", "../image/lol_4.jpg", "../image/lol_5.jpg",];
+            var index = 0;
+            var info = document.getElementById("info");
+            info.innerHTML = "一共"+imgs.length+"张图片，现在第"+(index+1)+"张";
+            pre.onclick = function () {
+                index--;
+                if (index <= -1) {
+                    index = imgs.length - 1;
+                }
+                img.src = imgs[index];
+                info.innerHTML = "一共"+imgs.length+"张图片，现在第"+(index+1)+"张";
+            };
+            next.onclick = function () {
+                index++;
+                if (index >= imgs.length) {
+                    index = 0;
+                }
+                img.src = imgs[index];
+                info.innerHTML = "一共"+imgs.length+"张图片，现在第"+(index+1)+"张";
+            };
+        };
+    </script>
+</head>
+
+<body>
+    <div id="outer">
+        <p id="info"></p>
+        <img src="../image/lol_1.jpg">
+        <button id="pre">上一张</button>
+        <button id="next">下一张</button>
+    </div>
+</body>
+
+</html>
