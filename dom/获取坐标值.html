@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #areaDiv {
+            height: 300px;
+            width: 500px;
+            border: 1px solid black;
+            margin-bottom: 50px;
+        }
+
+        #showMsg {
+            height: 50px;
+            width: 200px;
+            border: 1px solid black;
+
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var area = document.getElementById("areaDiv");
+            var show = document.getElementById("showMsg");
+            //事件对象
+            area.onmousemove = function (event) {
+
+                //解决浏览器兼容的问题
+                // if (!event) {
+                //     event = window.event;
+                // }
+                event = event || window.event;
+
+                var x = event.screenX;
+                var y = event.screenY;
+                // var x = event.clientX;
+                // var y = event.clientY;
+                show.innerHTML = "x = "+x+"  y = "+y;
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div id="areaDiv"></div>
+    <div id="showMsg"></div>
+</body>
+
+</html>
