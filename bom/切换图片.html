@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = () => {
+            var imgArr = ["../image/lol_1.jpg", "../image/lol_2.jpg", "../image/lol_3.jpg", "../image/lol_4.jpg", "../image/lol_5.jpg",];
+            var index = 0;
+            var img1 = document.getElementById("img1");
+            var btn1 = document.getElementById("btn1");
+            var btn2 = document.getElementById("btn2");
+            // 声明一个定时器的标识
+            var timer;
+            //问题： 点击多次就会开启多个定时器，而且只能关闭最后一个定时器
+            btn1.onclick = function () {
+                // 解决：在开启新的定时器时关闭上一个
+                clearInterval(timer);
+                timer = setInterval(() => {
+                    index++;
+                    // if(index>=imgArr.length) index = 0;
+                    index %= imgArr.length;
+                    img1.src = imgArr[index];
+                }, 1000);
+            }
+            btn2.onclick = function(){
+                // 可以接受任何值
+                clearInterval(timer);
+            }
+
+        }
+
+    </script>
+</head>
+
+<body>
+    <img id="img1" src="../image/lol_1.jpg">
+    <br>
+    <button id="btn1">开始</button>
+    <button id="btn2">停止</button>
+</body>
+
+</html>

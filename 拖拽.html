@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1 {
+            width: 800px;
+            height: 533px;
+            /* background-color: aqua; */
+            background-image: url(../image/寿司.jpg);
+            position: absolute;
+        }
+
+        #box2 {
+            width: 100px;
+            height: 100px;
+            background-color: yellowgreen;
+            position: absolute;
+            top: 300px;
+            left: 300px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+
+            var box1 = document.getElementById("box1");
+            var box2 = document.getElementById("box2");
+            var img1 = document.getElementById("img1");
+            drag(box1);
+            drag(box2);
+            drag(img1);
+
+
+
+            // 拖拽函数
+            function drag(obj) {
+                // 当鼠标在box1按下时
+                obj.onmousedown = function (event) {
+                    event = event || window.event;
+                    var ol = event.clientX - obj.offsetLeft;
+                    var ot = event.clientY - obj.offsetTop;
+                    // 当鼠标在文档内移动时
+                    document.onmousemove = function (event) {
+                        event = event || window.event;
+                        var left = event.clientX - ol;
+                        var top = event.clientY - ot;
+
+                        obj.style.left = left + "px";
+                        obj.style.top = top + "px";
+                    }
+                    // 当鼠标在文档内松开时时
+                    document.onmouseup = function () {
+                        // 取消文档的鼠标移动事件
+                        document.onmousemove = null;
+                        // 取消文档的鼠标松开事件
+                        document.onmouseup = null;
+                    }
+                    return false;
+                }
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <p>我是一段文字</p>
+    <img src="../image/美国队长2.jpg" id="img1" style="position: absolute;">
+    <div id="box1"></div>
+    <div id="box2"></div>
+</body>
+
+</html>
