@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        div{
+            position: absolute;
+            height: 100px;
+            width: 100px;
+            background-color: blueviolet;
+        }
+    </style>
+
+</head>
+<body>
+    <button id="btn1">变！</button>
+    <button id="btn4">再变！</button>
+    <button id="btn2">动！</button>
+    <button id="btn3">再动！</button>
+
+    <div class="div1">
+        我要赚钱！
+    </div>
+
+    <script src="../jquery/jquery.js"></script>
+    <script>
+        var $div1 = $('.div1')
+        $('#btn1').click(function (){
+            $div1
+                .animate({
+                    width: 200
+            })
+                .animate({
+                    height: 200
+            })
+        })
+
+        $('#btn4').click(function (){
+            $div1
+                .animate({
+                    width: '+=50'
+            })
+                .animate({
+                    height: '+=50'
+            })
+        })
+
+        $('#btn2').click(function (){
+            $div1
+                .animate({
+                    top: 200
+            })
+                .animate({
+                    left: 200
+            },1000)
+        })
+
+        $('#btn3').click(function (){
+            $div1
+                .animate({
+                    top: '+=200'
+            })
+                .animate({
+                    left: '+=200'
+            })
+        })
+    </script>
+</body>
+</html>
