@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .red{
+      color: red;
+    }
+  </style>
+</head>
+
+<!-- 主要目标,使用v-for 以及 v-bind 当我们点击某一行,某一行变颜色,其他不变
+  主要思路: <br>
+        0 增加数组  <br>
+        1 使用 for 循环 将数组循环出来 <br>
+        2 增加变量 listIndex  设置初始值 0 <br>
+        3 增加 class  active 并且判断 listIndex 是否等于index,如果是 则 为true,否则为false,这个时候页面加载就会默认选择第一个 <br>
+        4 增加点击事件,传入index  每次点击 则 cuerys 赋值为当前index -->
+<body>
+  <div id='app'>
+    <ul>
+      <li v-for="(m, index) in movies" 
+      v-on:click="change(index)" 
+      :class="{red: listIndex===index}">{{index}}-{{m}}</li>
+    </ul>
+  </div>
+
+
+  <script src='../js/vue.js'></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        message: 'Hello World',
+        movies: ['迪迦','泰罗','高斯','赛罗'],
+        listIndex: 0
+      },
+      methods: {
+        change: function(index){
+          this.listIndex = index
+        }
+      },
+    })
+  </script>
+</body>
+
+</html>
