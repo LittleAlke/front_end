@@ -96,18 +96,21 @@
       },
       computed: {
         sumPrice() {
-          let sum = 0
+          // let sum = 0
           // of是对象，in只是下标(以下3种方法皆可)
-          for(let i of this.message){
-            sum += i.price*i.count
-          }
+          // for(let i of this.message){
+          //   sum += i.price*i.count
+          // }
           // for(let i in this.message){
           //   sum += this.message[i].price*this.message[i].count
           // }
           // for (let index = 0; index < this.message.length; index++) {
           //   sum += this.message[index].price * this.message[index].count
           // }
-          return sum
+          // return sum
+          return this.message.reduce(function (pre, book) {
+            return pre + book.price * book.count
+          }, 0)
         }
       },
       methods: {

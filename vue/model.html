@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id='app'>
+    <!-- 双向绑定 lazy延迟加载,失去焦点-->
+    <input type="text" v-model.lazy.trim="message">
+    <!-- 等同于 -->
+    <!-- <input type="text" :value="message" @input="message=$event.target.value"> -->
+    <h2>{{message}}</h2>
+    <label for="male">
+      <input type="radio" id="male" value="男" v-model='gender'>男
+    </label>
+    <label for="female">
+      <input type="radio" id="female" value="女" v-model='gender'>女
+    </label>
+    <h2>{{gender}}</h2>
+    <label for="agree">
+      <input type="checkbox" id="agree" v-model='isAgree'>同意协议
+    </label>
+    <h2>{{isAgree}}</h2>
+    <button :disabled="!isAgree">下一步</button>
+    <br>
+    <input type="checkbox" value="篮球" v-model="hobbies">篮球
+    <input type="checkbox" value="足球" v-model="hobbies">足球
+    <input type="checkbox" value="乒乓球" v-model="hobbies">乒乓球
+    <input type="checkbox" value="羽毛球" v-model="hobbies">羽毛球
+    <h2>{{hobbies}}</h2>
+
+    <select v-model="mySelect">
+      <option value="apple" selected>苹果</option>
+      <option value="orange">橘子</option>
+      <option value="banana">香蕉</option>
+    </select>
+    <h2>{{mySelect}}</h2>
+
+    <select v-model="mySelects" multiple>
+      <option value="apple" selected>苹果</option>
+      <option value="orange">橘子</option>
+      <option value="banana">香蕉</option>
+    </select>
+    <h2>{{mySelects}}</h2>
+
+    <!-- 值绑定 -->
+    <label v-for="item in arr" :for="item">
+      <input type="checkbox" :id="item" :value="item" v-model="array">{{item}}
+    </label>
+    <h2>{{array}}</h2>
+  </div>
+
+
+  <script src='../js/vue.js'></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        message: 'Hello World',
+        gender: '男',
+        isAgree: false,
+        hobbies: [],
+        mySelect: 'apple',
+        mySelects: [],
+        array: [],
+        arr: [11112,22222,33333,44444,55555,66666]
+      }
+    })
+  </script>
+</body>
+
+</html>

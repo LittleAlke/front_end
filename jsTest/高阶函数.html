@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let nums = [10, 20, 30, 50, 12, 651, 023, 50, 50, 555, 100]
+
+    // let nums2 = nums.filter(function (n) {
+    //   return n <= 100
+    // })
+
+    // let nums3 = nums2.map(function (n) {
+    //   return n * 2
+    // })
+
+    // let total = nums3.reduce(function (preValue, n) {
+    //   return preValue + n
+    // }, 0)
+
+    // let total = nums.filter(function (n) {
+    //   return n<=100
+    // }).map(function (n) {
+    //   return n*2
+    // }).reduce(function (pre, n) {
+    //   return pre+n
+    // },0)
+
+    let total = nums.filter(n => n<=100).map(n => n*2).reduce((pre, n) => pre+n)
+
+  </script>
+</body>
+
+</html>
