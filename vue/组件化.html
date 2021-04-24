@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 3. 必须挂载在Vue实例下才能使用 -->
+  <div id='app'>
+    <!-- <my-cpn></my-cpn>
+    <my-cpn></my-cpn>
+    <my-cpn></my-cpn> -->
+    <cpn1></cpn1>
+  </div>
+
+
+  <script src='../js/vue.js'></script>
+  <script>
+
+    // const cpnC2 = Vue.extend({
+    //   template: `
+    //     <div>
+    //       <h2>我是标题22</h2>
+    //       <p>我是内容，哈哈哈哈</p>
+    //       <p>我是内容，呵呵呵呵</p>
+    //     </div>
+    //   `,
+    // })
+
+    // 1. 创建组件构造器对象
+    const cpnC1 = Vue.extend({
+      template: `
+        <div>
+          <h2>我是标题</h2>
+          <p>我是内容，哈哈哈哈</p>
+          <p>我是内容，呵呵呵呵</p>
+          <cpn2></cpn2>
+        </div>
+      `,
+      components: {
+        'cpn2': {
+          template: `
+        <div>
+          <h2>我是标题22</h2>
+          <p>我是内容，哈哈哈哈</p>
+          <p>我是内容，呵呵呵呵</p>
+        </div>
+      `,
+        }
+      }
+      // components: {
+      //   'cpn2': cpnC2
+      // }
+    })
+
+
+    // 2. 注册组件（全局组件,可以在多个Vue实例下使用）
+    // Vue.component('my-cpn',cpnC)
+
+
+    const app = new Vue({
+      el: '#app',
+      data: {
+        message: 'Hello World',
+      },
+      components: {
+        cpn1: cpnC1
+      }
+    })
+  </script>
+</body>
+
+</html>

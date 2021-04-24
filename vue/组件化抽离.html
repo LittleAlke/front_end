@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id='app'>
+    <cpn></cpn>
+    <cpn></cpn>
+    <cpn></cpn>
+  </div>
+
+  <template id="cpnC">
+    <div>
+      <h2>当前计数：{{counter}}</h2>
+      <button @click="decrement">-</button>
+      <button @click="increment">+</button>
+      <p>-----------------------------------------</p>
+    </div>
+  </template>
+
+
+  <script src='../js/vue.js'></script>
+  <script>
+    // const obj = {
+    //    counter: 0
+    // }
+    // 注册一个全局组件
+    Vue.component('cpn',{
+      template: '#cpnC',
+      data(){      // data必须是一个函数
+        return {    // 返回的是一个对象
+          counter: 0,
+        }
+        // return obj //这样的话返回的就是一个对象，会引起连锁反应
+      },
+      methods: {
+        increment(){
+          this.counter++
+        },
+        decrement(){
+          this.counter--
+        }
+      },
+    })
+
+    const app = new Vue({
+      el: '#app',
+      data: {
+        message: 'Hello World',
+      },
+      // components: {
+      //   cpn: {
+      //     template: '#cpnC'
+      //   }
+      // }
+    })
+  </script>
+</body>
+
+</html>
