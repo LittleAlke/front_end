@@ -1,12 +1,40 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/" replace>Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/home">Home</router-link> |
+      <router-link to="/about">About</router-link> |
+      <router-link :to="'/user/'+userId">User</router-link>
+      <!-- <button @click="homeClick">首页</button>
+      <button @click="aboutClick">关于</button> -->
     </div>
     <router-view/>
   </div>
 </template>
+
+<script>
+export default {
+  name: 'App',
+  data(){
+    return {
+      userId: 'Alke'
+    }
+  },
+  methods :{
+    homeClick(){
+      if (this.$router.app._router.history.current.fullPath!="/home") {
+        this.$router.push('/home')
+      }
+      // console.log(this.$router.app._router.history.current.fullPath);
+    },
+    aboutClick(){
+      if (this.$router.app._router.history.current.fullPath!="/about") {
+        this.$router.push('/about')
+      }
+      // console.log(this.$router.app._router.history.current.fullPath);
+    }
+  }
+}
+</script>
 
 <style>
 #app {
