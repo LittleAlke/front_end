@@ -5,8 +5,12 @@ import VueRouter from 'vue-router'
 // import User from '../views/User.vue'
 
 const Home = () => import('../views/Home.vue')
+const HomeNews = () => import('../views/HomeNews.vue')
+const HomeMessage = () => import('../views/HomeMessage.vue')
+
 const About = () => import('../views/About.vue')
 const User = () => import('../views/User.vue')
+const Profile = () => import('../views/Profile.vue')
 
 Vue.use(VueRouter)
 
@@ -18,7 +22,21 @@ const routes = [
   {
     path: '/home',
     name: 'Home',
-    component: Home
+    component: Home,
+    children: [
+      {
+        path: '',
+        redirect: 'news'
+      },
+      {
+        path: 'news',
+        component: HomeNews
+      },
+      {
+        path: 'message',
+        component: HomeMessage
+      }
+    ]
   },
   {
     path: '/about',
@@ -28,11 +46,16 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     // component: About
     component: About
-  },{
+  },
+  {
     path: '/user/:userId',
     name: 'User',
-    // component: User 
     component: User
+  },
+  {
+    path: '/prof',
+    name: 'Profile',
+    component: Profile
   }
 ]
 

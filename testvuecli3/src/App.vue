@@ -3,7 +3,8 @@
     <div id="nav">
       <router-link to="/home">Home</router-link> |
       <router-link to="/about">About</router-link> |
-      <router-link :to="'/user/'+userId">User</router-link>
+      <router-link :to="'/user/'+userId">User</router-link> |
+      <router-link :to="{path: '/prof', query: {name: 'Alke'}}">prof</router-link>
       <!-- <button @click="homeClick">首页</button>
       <button @click="aboutClick">关于</button> -->
     </div>
