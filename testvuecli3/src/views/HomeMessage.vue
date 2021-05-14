@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="HomeMessage">
     <ul>
       <li>消息1</li>
       <li>消息2</li>
@@ -16,5 +16,7 @@ export default {
 </script>
 
 <style>
-
+.HomeMessage{
+  background-color: rgb(36, 112, 212);
+}
 </style>

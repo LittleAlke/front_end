@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="HomeNews">
     <ul>
       <li>新闻1</li>
       <li>新闻2</li>
@@ -16,5 +16,7 @@ export default {
 </script>
 
 <style>
-
+.HomeNews{
+  background-color: rgb(172, 111, 20);
+}
 </style>

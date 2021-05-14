@@ -3,42 +3,48 @@
     <div id="nav">
       <router-link to="/home">Home</router-link> |
       <router-link to="/about">About</router-link> |
-      <router-link :to="'/user/'+userId">User</router-link> |
-      <router-link :to="{path: '/prof', query: {name: 'Alke'}}">prof</router-link>
+      <router-link :to="'/user/' + userId">User</router-link> |
+      <router-link :to="{ path: '/prof', query: { name: 'Alke' } }"
+        >prof</router-link
+      >
       <!-- <button @click="homeClick">首页</button>
       <button @click="aboutClick">关于</button> -->
+      <h2>{{ message }}</h2>
     </div>
-    <router-view/>
+    <keep-alive exclude="Profile">
+      <router-view/>
+    </keep-alive>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App',
-  data(){
+  name: "App",
+  data() {
     return {
-      userId: 'Alke'
-    }
+      message: "你好啊",
+      userId: "Alke",
+    };
   },
-  methods :{
-    homeClick(){
-      if (this.$router.app._router.history.current.fullPath!="/home") {
-        this.$router.push('/home')
+  methods: {
+    homeClick() {
+      if (this.$router.app._router.history.current.fullPath != "/home") {
+        this.$router.push("/home");
       }
       // console.log(this.$router.app._router.history.current.fullPath);
     },
-    aboutClick(){
-      if (this.$router.app._router.history.current.fullPath!="/about") {
-        this.$router.push('/about')
+    aboutClick() {
+      if (this.$router.app._router.history.current.fullPath != "/about") {
+        this.$router.push("/about");
       }
       // console.log(this.$router.app._router.history.current.fullPath);
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style>
-#app {
+/* #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -48,6 +54,10 @@ export default {
 
 #nav {
   padding: 30px;
+} */
+
+#app {
+  background-color: #bcc1c5;
 }
 
 #nav a {

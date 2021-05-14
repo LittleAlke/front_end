@@ -23,6 +23,9 @@ const routes = [
     path: '/home',
     name: 'Home',
     component: Home,
+    meta: {
+      title: '首页'
+    },
     children: [
       {
         path: '',
@@ -45,17 +48,26 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     // component: About
-    component: About
+    component: About,
+    meta: {
+      title: '关于'
+    },
   },
   {
     path: '/user/:userId',
     name: 'User',
-    component: User
+    component: User,
+    meta: {
+      title: '用户'
+    },
   },
   {
     path: '/prof',
     name: 'Profile',
-    component: Profile
+    component: Profile,
+    meta: {
+      title: '档案'
+    },
   }
 ]
 
@@ -63,5 +75,14 @@ const router = new VueRouter({
   routes,
   mode: 'history'
 })
+
+// 全局守卫
+// 前置守卫（guard）
+router.beforeEach((to, from, next) => {
+  document.title = to.matched[0].meta.title
+  next()
+})
+// 后置钩子（hook）
+router.afterEach()
 
 export default router
